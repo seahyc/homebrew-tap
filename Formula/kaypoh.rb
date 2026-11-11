@@ -10,7 +10,6 @@ class Kaypoh < Formula
   license "MIT"
   head "https://github.com/seahyc/kaypoh.git", branch: "main"
 
-  depends_on :macos
   depends_on macos: :ventura
 
   def install
