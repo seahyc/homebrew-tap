@@ -13,7 +13,8 @@ class Kaypoh < Formula
   depends_on macos: :ventura
 
   def install
-    system({ "APP_DIR" => libexec.to_s }, "./build.sh")
+    ENV["APP_DIR"] = libexec.to_s
+    system "./build.sh"
     (bin/"kaypoh").write <<~SH
       #!/bin/sh
       exec "#{opt_libexec}/Kaypoh.app/Contents/MacOS/kaypoh" "$@"
